@@ -18,7 +18,6 @@
     Other Bonus Features if time allows (Likes/Dislikes/Search users or topics)
       Possible dropdown of topics or # system to link/search post
   
-  
   # Team Members
     Kyle Barnhouse
     Daniel Masters
