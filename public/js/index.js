@@ -109,3 +109,28 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 // on click "meh/next"
 
 // fn to load next photo
+
+// creating user info
+$("submit-bio").on('click', function(event){
+  event.preventDefault();
+
+  var newUser = {
+    name: $("#inputname").val().trim(),
+    age: $("#inputage").val().trim(),
+    bio: $("#inputbio").val().trim(),
+    pictureURL: $("#userpic").val()    
+  };
+  console.log(newUser);
+
+  $.post("/api/")
+
+
+
+})
+// onclick "like"
+// function to add the photo id to the db and store in favorites
+// function to load next photo
+
+
+// on click "meh"
+// fn to load next photo
