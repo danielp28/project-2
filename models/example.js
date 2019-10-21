@@ -1,12 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
-  var Example = sequelize.define("Example", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT
-  });
-  return Example;
-};
-
-
+// create user table
 module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
     name: {
@@ -14,7 +6,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     age: {
-      type: DataTypes.I
+      type: DataTypes.STRING
     },
     bio: {
       type: DataTypes.TEXT,
@@ -26,3 +18,12 @@ module.exports = function (sequelize, DataTypes) {
   });
   return User;
 };
+
+// create Favorites table
+module.exports = function (sequelize, DataTypes){
+  var Favorites = sequelize.define("Favorites", {
+    mustache: {
+      type: DataTypes.BOOLEAN
+    }
+  })
+}
