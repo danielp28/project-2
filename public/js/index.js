@@ -99,3 +99,13 @@ $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 // -----------------------------------------------------------
+
+// onclick "like"
+
+// function to add the photo id to the db and store in favorites
+
+// function to load next photo
+
+// on click "meh/next"
+
+// fn to load next photo
