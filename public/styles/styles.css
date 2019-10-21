@@ -1,10 +1,44 @@
-
-.card {
-  margin: 75px 200px;
+.main-container-custom {
+  background-color: gray;
 }
 
+div.container {
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px;
+  width: 100%;
+  border-width: 5px 5px;
+  display: contents;
+}
+
+.home-card {
+  margin: 5px 5px;
+  width: 25%;
+  padding: 5px 5px;
+ 
+}
+
+div.row {
+  margin: 5px 5px;
+}
 
 .list-group-item {
   line-height: 2.5;
 }
+
+div.col-md-3 {
+  padding:5px 5px;
+  
+}
+
+/* -------------------------------------------------------- */
+
+
+          .card-img-top:hover {
+            /* -ms-transform: scale(1.5); IE 9 */
+            /* -webkit-transform: scale(1.5); Safari 3-8 */
+            transform: scale(1.1);
+            z-index: 1; 
+           
+            
+          }
 
