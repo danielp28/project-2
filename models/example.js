@@ -6,13 +6,13 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     age: {
-      type: DataTypes.STRING
+      type: DataTypes.INTEGER,
     },
     bio: {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    picture: {
+    pictureURL: {
       type: DataTypes.STRING
     }
   });
@@ -26,4 +26,5 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN
     }
   });
+  return Favorites;
 };
