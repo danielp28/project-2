@@ -1,25 +1,17 @@
-var db = require("../models");
+
+
+var path = require("path");
 
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.mustache.findAll({}).then(function(NAMEOFDB) {
-      res.render("home", {
-        msg: "Welcome!",
-        mustaches: NAMEOFDB
-      });
+      res.sendFile(path.join(__dirname, "../public/login.html"))
     });
-  });
+  
 
-  // Load mustache page and pass in an mustache by id
-  app.get("/mustache/:id", function(req, res) {
-    db.mustache.findOne({ where: { id: req.params.id } }).then(function(
-      NAMEOFDB
-    ) {
-      res.render("mustache", {
-        mustache: NAMEOFDB
-      });
-    });
+  // Load user_db page and pass in an user_db by id
+  app.get("/index", function(req, res) {
+   res.sendFile(path.join(__dirname, "../public/index.html"))
   });
 
   // Render 404 page for any unmatched routes
