@@ -54,3 +54,15 @@ module.exports = function (app) {
       });
   });
 };
+
+// API LOG IN
+app.post("/api/signup", function(req, res){
+  var email = req.body.email;
+  var password = req.body.email;
+
+  db.User.create({ email, password}).then(function(dbUser){
+    res.json(dbUser);
+  }).catch(function(err){
+    res.status(500).json(false);
+  })
+});
