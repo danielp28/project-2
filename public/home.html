@@ -30,8 +30,10 @@
     <div class="main-container-custom">
         <!-- Start Navbar -->
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" style="color: white">Tinda-Stache</a>
-            <button type="button" class="btn btn-outline-primary">Create Your Own Profile</button>
+            <a class="navbar-brand" style="color: white">Stachr</a>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Create Your Own Profile
+            </button>
         </nav>
         <!-- End Navbar -->
         <!-- Start Row 1 (Featured Videos List) -->
@@ -55,15 +57,7 @@
         <!-- Start Row 2 -->
         <div class="container">
             <div class="row">
-
-                <div class="col-md-4">
-                    <div class="card" class="home-card" style="width: 100%">
-                        <img src="images/baggio1.jpg" class="card-img-top" alt="..." onmouseenter="playAudio()">
-                    </div>
-                </div>
-
-
-                <div class="col-md-4">
+                <div class="col-md-4" id="card-display">
                     <div class="card">
                         <img src="images/tomselleck1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -76,14 +70,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="card" class="home-card" style="width: 100%">
-                        <img src="images/baggio1.jpg" class="card-img-top" alt="..." onmouseenter="playAudio()">
-                    </div>
-                </div>
-
-
                 <!-- Upload your own image example code -->
                 <!-- <input type='file' />
                 <br><img id="myImg" src="#" alt="your image" height=200 width=100> -->
@@ -92,16 +78,8 @@
         </div>
         <!--  -->
 
-
-
         <footer>
 
-            <!-- Button trigger modal -->
-            <div style="text-align: center">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Create Your Own Profile
-                </button>
-            </div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -118,33 +96,22 @@
                             <form>
                                 <div class="form-group">
                                     <label for="inputname">Name</label>
-                                    <input type="email" class="form-control" id="inputname" aria-describedby="emailHelp"
-                                        placeholder="Your Name">
+                                    <input class="form-control" id="inputname" placeholder="Your Name">
                                 </div>
+
                                 <div class="form-group">
                                     <label for="inputage">Age</label>
-                                    <input type="password" class="form-control" id="inputage"
-                                        placeholder="Yo, let's be honest here!">
+                                    <input class="form-control" id="inputage" placeholder="Yo, let's be honest here!">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputbio">Bio</label>
-                                    <input type="password" class="form-control" id="inputbio"
-                                        placeholder="Tell us about yourself...">
+                                    <input class="form-control" id="inputbio" placeholder="Tell us about yourself...">
                                 </div>
                                 <div class="form-group">
                                     <label for="userpic">Picture</label>
-                                    <input type="password" class="form-control" id="userpic"
-                                        placeholder="Insert URL of photo here">
+                                    <input class="form-control" id="userpic" placeholder="Insert URL of photo here">
                                 </div>
-                                <!-- <div class="form-group form-check">
-                                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                              </div> -->
-                                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                            </form>
-
-
-
+                            </form> 
                             <!-- ... -->
 
                         </div>
