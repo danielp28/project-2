@@ -1,14 +1,14 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  // Get all mustaches
+  // Get all users
   app.get("/api/users", function (req, res) {
     db.user_db.findAll({})
       .then(function (user_db) {
         res.json(user_db);
       });
   });
-
+ //see one user
   app.get("/api/users/:id", function (req, res) {
     db.user.findOne({
       where: {
@@ -20,7 +20,7 @@ module.exports = function (app) {
       })
   })
 
-  // Create a new example
+  // Create a new user
   app.post("/api/users", function (req, res) {
     db.user_db.create({
       name: req.body.name,
@@ -32,7 +32,7 @@ module.exports = function (app) {
     });
   });
 
-  // Delete an example by id
+  // Delete a user by id
   app.delete("/api/users/:id", function (req, res) {
     db.user_db.destroy({ where: 
       { 
@@ -42,7 +42,7 @@ module.exports = function (app) {
       res.json(user_db);
     });
   });
-
+  //update user info
   app.put("/api/users", function(req,res){
     db.user_db.update(req.body,
       {
