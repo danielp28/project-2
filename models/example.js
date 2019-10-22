@@ -1,5 +1,5 @@
 // create user table
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define("User", {
     name: {
       type: DataTypes.STRING,
@@ -20,10 +20,10 @@ module.exports = function (sequelize, DataTypes) {
 };
 
 // create Favorites table
-module.exports = function (sequelize, DataTypes){
+module.exports = function(sequelize, DataTypes) {
   var Favorites = sequelize.define("Favorites", {
     mustache: {
       type: DataTypes.BOOLEAN
     }
-  })
-}
+  });
+};

@@ -30,7 +30,7 @@
     <div class="main-container-custom">
         <!-- Start Navbar -->
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" style="color: white">Tinda-Stache</a>
+            <a class="navbar-brand" style="color: white">Mustache-Tinder</a>
             <button type="button" class="btn btn-outline-primary">Create Your Own Profile</button>
         </nav>
         <!-- End Navbar -->
@@ -41,11 +41,11 @@
         <!-- End Row 1 (Featured Videos List) -->
         <div class="container">
 
-            <div class="row">
+            <div class="row justify-content-md-center">
                 <div class="card" id="videos">
                     <div class="col-md-12" style="text-align: center">
                         <div>
-                            <button onclick="playMoodMusic()">Mood Music</button>
+                            <button onClick="togglePlay()">Mood Music</button>
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@
                             <p class="card-text">I love long walks on the beach...</p>
                             <div style="text-align: center">
                                 <a href="#" class="btn btn-primary">Like</a>
-                                <a href="#" class="btn btn-primary">Eh</a>
+                                <a href="#" class="btn btn-primary">Next 'Stache Please</a>
                             </div>
                         </div>
                     </div>
@@ -186,8 +186,10 @@
     </audio>
 
 
+    <audio id="moodmusic1" src="audio/moodmusic.mp3" preload="auto">
+    </audio>
 
-
+<!-- -------------------------------------------------------------------------------------- -->
 
 
 
@@ -208,25 +210,46 @@
         function playMoodMusic() {
             moodmusic.play();
         }
+        // ----------------------------------------------------------------
+        // Mood Music Feature
+        var myAudio = document.getElementById("moodmusic1");
+        var isPlaying = false;
+
+        function togglePlay() {
+            if (isPlaying) {
+                myAudio.pause()
+            } else {
+                myAudio.play();
+            }
+        };
+        myAudio.onplaying = function () {
+            isPlaying = true;
+        };
+        myAudio.onpause = function () {
+            isPlaying = false;
+        };
+
+        // -----------------------------------------------------------------
+
+        // window.addEventListener('load', function () {
+        //     document.querySelector('input[type="file"]').addEventListener('change', function () {
+        //         if (this.files && this.files[0]) {
+        //             var img = document.querySelector('img');  // $('img')[0]
+        //             img.src = URL.createObjectURL(this.files[0]); // set src to file url
+        //             img.onload = imageIsLoaded; // optional onload event listener
+        //         }
+        //     });
+        // });
+
+        // function imageIsLoaded(e) { alert(e); }
+
+// ---------------------------------------------------------------------------------
 
 
 
 
 
 
-        // ---------------------------------------------------
-
-        window.addEventListener('load', function () {
-            document.querySelector('input[type="file"]').addEventListener('change', function () {
-                if (this.files && this.files[0]) {
-                    var img = document.querySelector('img');  // $('img')[0]
-                    img.src = URL.createObjectURL(this.files[0]); // set src to file url
-                    img.onload = imageIsLoaded; // optional onload event listener
-                }
-            });
-        });
-
-        function imageIsLoaded(e) { alert(e); }
 
 
     </script>
