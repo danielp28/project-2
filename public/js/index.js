@@ -100,6 +100,37 @@ $userList.on("click", ".delete", handleDeleteBtnClick);
 
 // -----------------------------------------------------------
 
+var profiles = [];
+
+app.get("/api/profiles", function(req, res) {
+  res.json(profileData);
+});
+  // {
+  //   name: "Tom Selleck",
+  //   age: ["34"],
+  //   bio: "I like long walks on the beach...",
+  //   pictureURL: "images/tomselleck1.jpg"
+  // },
+  // {
+  //   name: "Ron Swanson",
+  //   age: ["35"],
+  //   bio: "Wouldn't you like to know...",
+  //   pictureURL: "images/nickofferman1.jpg"
+  // },
+  // {
+  //   name: "Idris Elba",
+  //   age: ["32"],
+  //   bio: "I'm a mysterious man",
+  //   pictureURL: "images/idriselba.jpg"
+  // },
+  // {
+  //   name: "Baggio",
+  //   age: ["28"],
+  //   bio: "Itsa me, Baggio!",
+  //   pictureURL: "images/baggio1.jpg"
+  // }
+
+
 
 // creating user info
 $("submit-bio").on('click', function (event) {

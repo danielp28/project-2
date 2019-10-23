@@ -6,7 +6,7 @@
   "test": {
     "username": "root",
     "password": "gcvAm58076!",
-    "database": "testdb",
+    "database": "user_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
