@@ -54,3 +54,18 @@ module.exports = function (app) {
       });
   });
 };
+
+app.put("api/examples/:id", function(req, res){
+  db.Exampl.update({ where: { id: req.params.id}})
+})
+
+// app.get("/signup", function(req, res){
+//   res.sendFile(path.join(__dirname, "../pulic/signup.html"))
+// }
+
+// app.post("/api/signup", function(req, res){
+//   db.User.create(req.body).then(function(){
+//     res.json(true);
+
+//   })
+// })
