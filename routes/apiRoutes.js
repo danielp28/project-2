@@ -8,7 +8,7 @@ module.exports = function (app) {
         res.json(user_db);
       });
   });
- //see one user
+  //see one user
   app.get("/api/users/:id", function (req, res) {
     db.user.findOne({
       where: {
@@ -21,7 +21,7 @@ module.exports = function (app) {
   })
 
   // Create a new user
-  app.post("/api/users", function (req, res) {
+  app.post("/api/profile", function (req, res) {
     db.user_db.create({
       name: req.body.name,
       age: req.body.age,
@@ -34,22 +34,23 @@ module.exports = function (app) {
 
   // Delete a user by id
   app.delete("/api/users/:id", function (req, res) {
-    db.user_db.destroy({ where: 
-      { 
-        id: req.params.id 
-      } 
+    db.user_db.destroy({
+      where:
+      {
+        id: req.params.id
+      }
     }).then(function (user_db) {
       res.json(user_db);
     });
   });
   //update user info
-  app.put("/api/users", function(req,res){
+  app.put("/api/users", function (req, res) {
     db.user_db.update(req.body,
       {
         where: {
-          id:req.body.id
+          id: req.body.id
         }
-      }).then(function(user_db){
+      }).then(function (user_db) {
         res.json(user_db)
       });
   });
