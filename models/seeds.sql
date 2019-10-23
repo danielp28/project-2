@@ -1,2 +1,2 @@
-INSERT INTO user_db (name, age, bio, pictureURL)
-VALUES ();
+-- INSERT INTO users (name, age, bio, pictureURL)
+-- VALUES ();

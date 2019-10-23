@@ -101,8 +101,37 @@ $userList.on("click", ".delete", handleDeleteBtnClick);
 
 // -----------------------------------------------------------
 
-<<<<<<< HEAD
-=======
+var profiles = [];
+
+app.get("/api/profiles", function(req, res) {
+  res.json(profileData);
+});
+  // {
+  //   name: "Tom Selleck",
+  //   age: ["34"],
+  //   bio: "I like long walks on the beach...",
+  //   pictureURL: "images/tomselleck1.jpg"
+  // },
+  // {
+  //   name: "Ron Swanson",
+  //   age: ["35"],
+  //   bio: "Wouldn't you like to know...",
+  //   pictureURL: "images/nickofferman1.jpg"
+  // },
+  // {
+  //   name: "Idris Elba",
+  //   age: ["32"],
+  //   bio: "I'm a mysterious man",
+  //   pictureURL: "images/idriselba.jpg"
+  // },
+  // {
+  //   name: "Baggio",
+  //   age: ["28"],
+  //   bio: "Itsa me, Baggio!",
+  //   pictureURL: "images/baggio1.jpg"
+  // }
+
+
 // onclick "like"
 
 // function to add the photo id to the db and store in favorites
@@ -113,28 +142,22 @@ $userList.on("click", ".delete", handleDeleteBtnClick);
 
 // fn to load next photo
 
->>>>>>> master
 // creating user info
-$("submit-bio").on("click", function(event) {
+$("submit-bio").on('click', function (event) {
   event.preventDefault();
 
   var newUser = {
-    name: $("#inputname")
-      .val()
-      .trim(),
-    age: $("#inputage")
-      .val()
-      .trim(),
-    bio: $("#inputbio")
-      .val()
-      .trim(),
+    name: $("#inputname").val().trim(),
+    age: $("#inputage").val().trim(),
+    bio: $("#inputbio").val().trim(),
     pictureURL: $("#userpic").val()
   };
   console.log(newUser);
 
-  $.post("/api/newuser", newUser).then(function(data) {
-    console.log(data);
-  });
+  $.post("/api/newuser", newUser)
+    .then(function (data) {
+      console.log(data)
+    });
 
   $("#inputname").val("");
   $("#inputage").val("");
@@ -143,18 +166,24 @@ $("submit-bio").on("click", function(event) {
 });
 
 // onclick "like"
-$("sumbit-bttn").on("click", function() {
-  document.getElementById;
-});
+$("sumbit-bttn").on("click", function () {
+  nextPhoto();
+})
 // function to add the photo id to the db and store in favorites
 // function to load next photo
 
 // on click "meh"
 // fn to load next photo
-<<<<<<< HEAD
-=======
 
 
+function nextPhoto(profiles) {
+  var card = $("#card-display");
+
+  card.html("<div>" + profiles + "</div>");
+  for (var i = 0; i < profiles.length; i++) {
+    card.append("<div class= 'card-profile' data-name=' " + profiles[i] + " '>" + profiles[i] + "</div>")
+  }
+}
   // $("#submit").click(function(e){
   //   e.preventDefault();
 
@@ -253,4 +282,4 @@ function loadProfile(position) {
 
 function makeNewProfile(){
 }
->>>>>>> master
+

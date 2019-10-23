@@ -31,10 +31,11 @@
         <!-- Start Navbar -->
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand" style="color: white">Tinda-Stache</a>
-            <button type="button" class="btn btn-outline-primary">Create Your Own Profile</button>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Create Your Own Profile
+            </button>
         </nav>
         <!-- End Navbar -->
-<<<<<<< HEAD
         <!-- Start Create User -->
         <div class="card">
             <div class="card-body" style="background-color: #d5d7da">
@@ -53,7 +54,6 @@
                     </div>
                     <div style="text-align: center">
                     <button type="submit" class="btn btn-primary" id="submit">Create Account</button>
-=======
         <!-- Start Row 1 (Featured Videos List) -->
         <!-- <div class="row">
 
@@ -100,7 +100,6 @@
                 <div class="col-md-4">
                     <div class="card" class="home-card" style="width: 100%">
                         <img src="images/baggio1.jpg" class="card-img-top" alt="..." onmouseenter="playAudio()">
->>>>>>> master
                     </div>
                 </div>
 
@@ -119,9 +118,7 @@
 
             <!-- Button trigger modal -->
             <div style="text-align: center">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Create Your Own Profile
-                </button>
+
             </div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -139,23 +136,19 @@
                             <form>
                                 <div class="form-group">
                                     <label for="inputname">Name</label>
-                                    <input type="email" class="form-control" id="inputname" aria-describedby="emailHelp"
-                                        placeholder="Your Name">
+                                    <input class="form-control" id="inputname" placeholder="Your Name">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputage">Age</label>
-                                    <input type="password" class="form-control" id="inputage"
-                                        placeholder="Yo, let's be honest here!">
+                                    <input class="form-control" id="inputage" placeholder="Yo, let's be honest here!">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputbio">Bio</label>
-                                    <input type="password" class="form-control" id="inputbio"
-                                        placeholder="Tell us about yourself...">
+                                    <input class="form-control" id="inputbio" placeholder="Tell us about yourself...">
                                 </div>
                                 <div class="form-group">
                                     <label for="userpic">Picture</label>
-                                    <input type="password" class="form-control" id="userpic"
-                                        placeholder="Insert URL of photo here">
+                                    <input class="form-control" id="userpic" placeholder="Insert URL of photo here">
                                 </div>
                                 <!-- <div class="form-group form-check">
                                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -184,13 +177,6 @@
 
 
     </div>
-<<<<<<< HEAD
-
-
-
-
-    
-=======
     <!-- End Row 2 -->
 
 
@@ -227,21 +213,20 @@
         }
         // ---------------------------------------------------
 
-        window.addEventListener('load', function () {
-            document.querySelector('input[type="file"]').addEventListener('change', function () {
-                if (this.files && this.files[0]) {
-                    var img = document.querySelector('img');  // $('img')[0]
-                    img.src = URL.createObjectURL(this.files[0]); // set src to file url
-                    img.onload = imageIsLoaded; // optional onload event listener
-                }
-            });
-        });
+        // window.addEventListener('load', function () {
+        //     document.querySelector('input[type="file"]').addEventListener('change', function () {
+        //         if (this.files && this.files[0]) {
+        //             var img = document.querySelector('img');  // $('img')[0]
+        //             img.src = URL.createObjectURL(this.files[0]); // set src to file url
+        //             img.onload = imageIsLoaded; // optional onload event listener
+        //         }
+        //     });
+        // });
 
-        function imageIsLoaded(e) { alert(e); }
+        // function imageIsLoaded(e) { alert(e); }
 
 
     </script>
->>>>>>> master
 </body>
 
 </html>
