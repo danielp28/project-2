@@ -1,6 +1,6 @@
-// create user table
-module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
+// create Profile table
+module.exports = function (sequelize, DataTypes) {
+  var Profile = sequelize.define("Profile", {
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     }
   });
-  return User;
+  return Profile;
 };
 
 // create Favorites table

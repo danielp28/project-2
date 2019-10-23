@@ -1,7 +1,7 @@
 
 // Get references to page elements
-var $userText = $("#user-text");
-var $userDescription = $("#user-description");
+var $userName = $("#user-name");
+var $userBio = $("#user-bio");
 var $submitBtn = $("#submit");
 var $userList = $("#user-list");
 
@@ -66,12 +66,12 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var user = {
-    text: $userText.val().trim(),
-    description: $userDescription.val().trim()
+    name: $userName.val().trim(),
+    description: $userBio.val().trim()
   };
 
-  if (!(user.text && user.description)) {
-    alert("You must enter an user text and description!");
+  if (!(user.name && user.description)) {
+    alert("You must enter an username and description!");
     return;
   }
 
@@ -79,8 +79,8 @@ var handleFormSubmit = function(event) {
     refreshUsers();
   });
 
-  $userText.val("");
-  $userDescription.val("");
+  $userName.val("");
+  $userBio.val("");
 };
 
 // handleDeleteBtnClick is called when an user's delete button is clicked
@@ -101,6 +101,8 @@ $userList.on("click", ".delete", handleDeleteBtnClick);
 
 // -----------------------------------------------------------
 
+<<<<<<< HEAD
+=======
 // onclick "like"
 
 // function to add the photo id to the db and store in favorites
@@ -111,40 +113,46 @@ $userList.on("click", ".delete", handleDeleteBtnClick);
 
 // fn to load next photo
 
+>>>>>>> master
 // creating user info
-$("submit-bio").on('click', function(event){
-  event.preventDefault(); 
+$("submit-bio").on("click", function(event) {
+  event.preventDefault();
 
   var newUser = {
-    name: $("#inputname").val().trim(),
-    age: $("#inputage").val().trim(),
-    bio: $("#inputbio").val().trim(),
-    pictureURL: $("#userpic").val()    
+    name: $("#inputname")
+      .val()
+      .trim(),
+    age: $("#inputage")
+      .val()
+      .trim(),
+    bio: $("#inputbio")
+      .val()
+      .trim(),
+    pictureURL: $("#userpic").val()
   };
   console.log(newUser);
 
-  $.post("/api/newuser", newUser)
-    .then(function(data){
-      console.log(data)
-    });
+  $.post("/api/newuser", newUser).then(function(data) {
+    console.log(data);
+  });
 
-    $("#inputname").val("");
-    $("#inputage").val("");
-    $("#inputbio").val("");
-    $("#userpic").val("");
+  $("#inputname").val("");
+  $("#inputage").val("");
+  $("#inputbio").val("");
+  $("#userpic").val("");
 });
 
-
 // onclick "like"
-$("sumbit-bttn").on("click", function(){
-  document.getElementById
-})
+$("sumbit-bttn").on("click", function() {
+  document.getElementById;
+});
 // function to add the photo id to the db and store in favorites
 // function to load next photo
 
-
 // on click "meh"
 // fn to load next photo
+<<<<<<< HEAD
+=======
 
 
   // $("#submit").click(function(e){
@@ -245,3 +253,4 @@ function loadProfile(position) {
 
 function makeNewProfile(){
 }
+>>>>>>> master
