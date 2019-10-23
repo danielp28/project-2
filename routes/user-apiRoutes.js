@@ -20,6 +20,20 @@ module.exports = function(app){
         })
     });
 
-    app.post("/api/user", function(req,))
+    app.post("/api/user", function(req, res){
+        db.User.create(req.body).then(function(dbUser){
+            res.json(dbUser);
+        })
+    });
 
-}
+    app.delete("/api/user/:id", function(req,res){
+        db.User.destroy({
+            where: {
+                id:req.params.id
+            }
+        }).then.(function(dbUser){
+            res.json(dbUser);
+        });
+    });
+
+};

@@ -282,4 +282,4 @@ function loadProfile(position) {
 
 function makeNewProfile(){
 }
->>>>>>> e8f452873efb91f97b8aeaada334d7c307c37e66
+
