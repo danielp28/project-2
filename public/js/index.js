@@ -191,7 +191,28 @@ $("sumbit-bttn").on("click", function(){
       age: 28,
       bio: "Itsa me, Baggio!",
       pictureURL: "images/baggio1.jpg"
-    }
+    },
+    {
+      name: "Milo Ventimiglia",
+      age: 28,
+      bio: "Itsa me, Baggio!",
+      pictureURL: "images/miloventimiglia.jpg"
+    },{
+      name: "Eddie Murphy",
+      age: 28,
+      bio: "Itsa me, Baggio!",
+      pictureURL: "images/eddiemurphy.jpg"
+    },{
+      name: "Henry Cavill",
+      age: 28,
+      bio: "Itsa me, Baggio!",
+      pictureURL: "images/henrycavill.jpg"
+    },{
+      name: "Bradley Cooper",
+      age: 28,
+      bio: "Itsa me, Baggio!",
+      pictureURL: "images/bradleycooper.jpg"
+    },
   ];
 
   // Load first profile on load in
