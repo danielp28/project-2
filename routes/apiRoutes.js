@@ -56,57 +56,17 @@ module.exports = function (app) {
   });
 };
 
+app.put("api/examples/:id", function(req, res){
+  db.Exampl.update({ where: { id: req.params.id}})
+})
 
-module.exports = function (app) {
+// app.get("/signup", function(req, res){
+//   res.sendFile(path.join(__dirname, "../pulic/signup.html"))
+// }
 
-  app.get("/api/users", function (req, res) {
-    res.json(userData);
-  });
-
-  // API POST Requests
-  // Below code handles when a user submits a form and thus submits data to the server.
-  // In each of the below cases, when a user submits form data (a JSON object)
-  // ...the JSON is pushed to the appropriate JavaScript array
-  // (ex. User fills out a reservation request... this data is then sent to the server...
-  // Then the server saves the data to the tableData array)
-  // ---------------------------------------------------------------------------
-
-  app.post("/api/tables", function (req, res) {
-    // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
-    // It will do this by sending out the value "true" have a table
-    // req.body is available since we're using the body parsing middleware
-    if (tableData.length < 5) {
-      tableData.push(req.body);
-      res.json(true);
-    }
-    else {
-      waitListData.push(req.body);
-      res.json(false);
-    }
-  });
-
-  // ---------------------------------------------------------------------------
-  // I added this below code so you could clear out the table while working with the functionality.
-  // Don"t worry about it!
-
-  app.post("/api/clear", function (req, res) {
-    // Empty out the arrays of data
-    tableData.length = 0;
-    waitListData.length = 0;
-
-    res.json({ ok: true });
-  });
-};
-
-// API LOG IN
 // app.post("/api/signup", function(req, res){
-//   var email = req.body.email;
-//   var password = req.body.email;
+//   db.User.create(req.body).then(function(){
+//     res.json(true);
 
-//   db.User.create({ email, password}).then(function(dbUser){
-//     res.json(dbUser);
-//   }).catch(function(err){
-//     res.status(500).json(false);
 //   })
-// });
-
+// })
