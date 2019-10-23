@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Stachr</title>
+    <title>'Stachr</title>
     <link rel="stylesheet" href="styles/styles.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -43,29 +43,36 @@
         <!-- End Row 1 (Featured Videos List) -->
         <div class="container">
 
-            <div class="row">
+            <div class="row justify-content-md-center">
                 <div class="card" id="videos">
                     <div class="col-md-12" style="text-align: center">
                         <div>
-                            <button onclick="playMoodMusic()">Mood Music</button>
+                            <button onClick="togglePlay()">Mood Music</button>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
         <!-- Start Row 2 -->
         <div class="container">
             <div class="row">
-                <div class="col-md-4" id="card-display">
-                    <div class="card">
-                        <img src="images/tomselleck1.jpg" class="card-img-top" alt="...">
+
+                <div class="col-md-4">
+                    <!-- <div class="card" class="home-card" style="width: 100%">
+                        <img src="images/baggio1.jpg" class="card-img-top" alt="..." onmouseenter="playAudio()">
+                    </div> -->
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="card" id="cardProfile">
+                        <img src="images/tomselleck1.jpg" class="card-img-top" id="profilePic" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title" style="text-align: center">Tom Selleck, 34</h5>
-                            <p class="card-text">I love long walks on the beach...</p>
+                            <h5 class="card-title" id="nameAge" style="text-align: center">Tom Selleck, 34</h5>
+                            <p class="card-text" id="profileBio">I love long walks on the beach...</p>
                             <div style="text-align: center">
-                                <a href="#" class="btn btn-primary">Like</a>
-                                <a href="#" class="btn btn-primary">Eh</a>
+                                <button class="btn btn-primary" id="like">Like</button>
+                                <button class="btn btn-primary" id="next">Next 'Stache Please</button>
                             </div>
                         </div>
                     </div>
@@ -133,6 +140,10 @@
     <!-- End Row 2 -->
 
 
+    <!-- Video Elements -->
+        <video autoplay muted loop id="myVideoBtn">
+            <source src="images/slowsmoke.mp4" type="video/mp4" >
+        </video>
     <!-- Audio Elements -->
     <audio id="audioID">
         <!-- <source src="http://iss240.net/tempfiles/menu-click/1.ogg" type="audio/ogg"> -->
@@ -151,6 +162,16 @@
         <source src="audio/moodmusic.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+
+
+    <audio id="moodmusic1" src="audio/moodmusic.mp3" preload="auto">
+    </audio>
+
+<!-- -------------------------------------------------------------------------------------- -->
+
+
+
+
     <script>
         var audio1 = document.getElementById("audioID");
         function playAudio() {
@@ -164,19 +185,59 @@
         function playMoodMusic() {
             moodmusic.play();
         }
-        // ---------------------------------------------------
+        // ----------------------------------------------------------------
+        // Mood Music Feature
+        var myAudio = document.getElementById("moodmusic1");
+        var myVideo = document.getElementById("myVideoBtn");
+        var myContainer = document.getElementsByClassName("main-container-custom");
+        var isPlaying = false;
 
-        window.addEventListener('load', function () {
-            document.querySelector('input[type="file"]').addEventListener('change', function () {
-                if (this.files && this.files[0]) {
-                    var img = document.querySelector('img');  // $('img')[0]
-                    img.src = URL.createObjectURL(this.files[0]); // set src to file url
-                    img.onload = imageIsLoaded; // optional onload event listener
-                }
-            });
-        });
+        function togglePlay() {
+            if (isPlaying && myVideo.play()) {
+                myAudio.pause();
+                myVideo.pause();
+                $("#myVideoBtn").attr("display", "none");
+            } else {
+                myAudio.play();
+                myVideo.play();
+                $("#myVideoBtn").attr("display", "block");
+            }
+        };
+        myAudio.onplaying = function () {
+            isPlaying = true;
+        };
+        myAudio.onpause = function () {
+            isPlaying = false;
+        };
 
-        function imageIsLoaded(e) { alert(e); }
+        myVideo.onplaying = function(){
+            isPlaying = true;
+        }
+        myVideo.onpause = function () {
+            isPlaying = false;
+        };
+
+        // -----------------------------------------------------------------
+
+        // window.addEventListener('load', function () {
+        //     document.querySelector('input[type="file"]').addEventListener('change', function () {
+        //         if (this.files && this.files[0]) {
+        //             var img = document.querySelector('img');  // $('img')[0]
+        //             img.src = URL.createObjectURL(this.files[0]); // set src to file url
+        //             img.onload = imageIsLoaded; // optional onload event listener
+        //         }
+        //     });
+        // });
+
+        // function imageIsLoaded(e) { alert(e); }
+
+// ---------------------------------------------------------------------------------
+
+
+
+
+
+
 
 
     </script>
