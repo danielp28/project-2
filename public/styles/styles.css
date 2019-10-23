@@ -1,5 +1,9 @@
 .main-container-custom {
-  background-color: gray;
+  /* background-color: black; */
+}
+
+body {
+  background-color: black;
 }
 
 div.container {
@@ -27,6 +31,17 @@ div.row {
 
 div.col-md-3 {
   padding:5px 5px;
+  
+}
+
+#myVideoBtn {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+
   
 }
 
