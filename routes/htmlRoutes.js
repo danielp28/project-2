@@ -1,5 +1,3 @@
-
-
 var path = require("path");
 
 module.exports = function(app) {
@@ -14,8 +12,8 @@ module.exports = function(app) {
    res.sendFile(path.join(__dirname, "../public/login.html"))
   });
 
-  // Render 404 page for any unmatched routes
-  // app.get("*", function(req, res) {
-  //   res.render("404");
-  // });
+//   // Render 404 page for any unmatched routes
+//   app.get("*", function(req, res) {
+//     res.render("404");
+//   });
 };
