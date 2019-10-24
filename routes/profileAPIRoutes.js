@@ -4,59 +4,51 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all profile
   app.get("/api/profile", function(req, res) {
-    db.user_db.findAll({}).then(function(user_db) {
-      res.json(user_db);
+    db.Profile.findAll({}).then(function(dbProfile) {
+      res.json(dbProfile);
     });
   });
-  //see one user
+  //see one Profile
   app.get("/api/profile/:id", function(req, res) {
-    db.user_db
-      .findOne({
-        where: {
-          id: req.params.id
-        }
-      })
-      .then(function(user_db) {
-        res.json(user_db);
-      });
+    db.Profile.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbProfile) {
+      res.json(dbProfile);
+    });
   });
 
-  // Create a new user
+  // Create a new Profile
   app.post("/api/profile", function(req, res) {
-    db.user_db
-      .create({
-        name: req.body.name,
-        age: req.body.age,
-        bio: req.body.bio,
-        pictureURL: req.body.pictureURL
-      })
-      .then(function(user_db) {
-        res.json(user_db);
-      });
+    db.Profile.create({
+      name: req.body.name,
+      age: req.body.age,
+      bio: req.body.bio,
+      pictureURL: req.body.pictureURL
+    }).then(function(dbProfile) {
+      res.json(dbProfile);
+    });
   });
 
-  // Delete a user by id
+  // Delete a Profile by id
   app.delete("/api/profile/:id", function(req, res) {
-    db.user_db
-      .destroy({
-        where: {
-          id: req.params.id
-        }
-      })
-      .then(function(user_db) {
-        res.json(user_db);
-      });
+    db.Profile.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbProfile) {
+      res.json(dbProfile);
+    });
   });
-  //update user info
+  //update Profile info
   app.put("/api/profile", function(req, res) {
-    db.user_db
-      .update(req.body, {
-        where: {
-          id: req.body.id
-        }
-      })
-      .then(function(user_db) {
-        res.json(user_db);
-      });
+    db.Profile.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbProfile) {
+      res.json(dbProfile);
+    });
   });
 };
