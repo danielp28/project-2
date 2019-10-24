@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 var db = require("../models");
-console.log(db);
+// console.log(db);
 module.exports = function(app) {
   // Get all profile
   app.get("/api/profile", function(req, res) {
