@@ -1,15 +1,16 @@
 /* eslint-disable camelcase */
 var db = require("../models");
-
-module.exports = function (app) {
+console.log(db);
+module.exports = function(app) {
   // Get all profile
-  app.get("/api/profile", function (req, res) {
-    db.Profile.findAll({}).then(function (user_db) {
+  app.get("/api/profile", function(req, res) {
+    db.Profile.findAll({}).then(function(user_db) {
       res.json(user_db);
     });
   });
+  
   //see one user
-  app.get("/api/profile/:id", function (req, res) {
+  app.get("/api/profile/:id", function(req, res) {
     db.Profile.findOne({
         where: {
           id: req.params.id
