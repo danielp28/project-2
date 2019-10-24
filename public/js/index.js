@@ -101,11 +101,11 @@ $userList.on("click", ".delete", handleDeleteBtnClick);
 
 // -----------------------------------------------------------
 
-var profiles = [];
+// var profiles = [];
 
-app.get("/api/profiles", function(req, res) {
-  res.json(profileData);
-});
+// app.get("/api/profiles", function(req, res) {
+//   res.json(profileData);
+// });
   // {
   //   name: "Tom Selleck",
   //   age: ["34"],
@@ -143,27 +143,27 @@ app.get("/api/profiles", function(req, res) {
 // fn to load next photo
 
 // creating user info
-$("submit-bio").on('click', function (event) {
-  event.preventDefault();
+// $("submit-bio").on('click', function (event) {
+//   event.preventDefault();
 
-  var newUser = {
-    name: $("#inputname").val().trim(),
-    age: $("#inputage").val().trim(),
-    bio: $("#inputbio").val().trim(),
-    pictureURL: $("#userpic").val()
-  };
-  console.log(newUser);
+//   var newUser = {
+//     name: $("#inputname").val().trim(),
+//     age: $("#inputage").val().trim(),
+//     bio: $("#inputbio").val().trim(),
+//     pictureURL: $("#userpic").val()
+//   };
+//   console.log(newUser);
 
-  $.post("/api/newuser", newUser)
-    .then(function (data) {
-      console.log(data)
-    });
+//   $.post("/api/newuser", newUser)
+//     .then(function (data) {
+//       console.log(data)
+//     });
 
-  $("#inputname").val("");
-  $("#inputage").val("");
-  $("#inputbio").val("");
-  $("#userpic").val("");
-});
+//   $("#inputname").val("");
+//   $("#inputage").val("");
+//   $("#inputbio").val("");
+//   $("#userpic").val("");
+// });
 
 // onclick "like"
 $("sumbit-bttn").on("click", function () {
@@ -208,7 +208,7 @@ function nextPhoto(profiles) {
     {
       name: "Tom Selleck",
       age: 34,
-      bio: "I like long walks on the beach...",
+      bio: "Hello there, for starters I like long walks on the beach...",
       pictureURL: "images/tomselleck1.jpg"
     },
     {

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
+​
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>'Stachr</title>
-    <link rel="stylesheet" href="styles/styles.css">
-
+    <title>Stachr</title>
+    <link rel="stylesheet" href="styles/christian.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -22,22 +22,82 @@
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="../public/js/index.js"></script>
-
-
+    <script src="https://unpkg.com/can/dist/global/can.js"></script>
+​
 </head>
-
+​
 <body>
     <div class="main-container-custom">
         <!-- Start Navbar -->
-        <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" style="color: white">'Stachr</a>
-            <div>
-            <button type="button" class="btn btn-outline-primary">Your Favorites</button>
-    
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">Create
-                Your Own Profile</button>
+        <nav class="navbar">
+                <a class="navbar-brand" href="">
+                    <img src="../stash.png" class="d-inline-block align-top nav-logo" alt="Stachr Logo">Stachr
+                </a>
+                <button type="button" class="btn btn-outline-primary">Create Your Own Profile</button>
+            </nav>
+        <!-- End Navbar -->
+        <!-- Start Row 1 (Featured Videos List) -->
+        <!-- <div class="row">
+​
+        </div> -->
+        <!-- End Row 1 (Featured Videos List) -->
+        <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="card" id="videos">
+                        <div class="col-md-12" style="text-align: center">
+                            <div>
+                                <!-- <button onClick="playMoodMusic()">Mood Music</button> -->
+                                <id="play-video" class="video-play-button" onClick="playMoodMusic()"href="#">
+                                    <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Button trigger modal -->
+        <!-- Start Row 2 -->
+        <div class="container">
+            <div class="row">
+​
+                    <div class="col-md-4">
+                            <!-- <div class="card" class="home-card" style="width: 100%">
+            <img src="images/baggio1.jpg" class="card-img-top" alt="..." onmouseenter="playAudio()">
+        </div> -->
+    </div>
+​
+​
+    <div class="col-md-4">
+        <div class="card" >
+            <div style="position:relative">
+                <img src="images/tomselleck1.jpg" class="card-img-top" alt="...">
+                <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->
+                    <div class="bttns">
+                      <button class="dissBtn" type="button">Dislike</button>
+                      <button class="likeBtn" type="button">Like</button>
+                    </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">Tom Selleck, 34</h5>
+                <p class="card-text">I love long walks on the beach...</p>
+            </div>
+        </div>
+    </div>
+​
+    <div class="col-md-4">
+    </div>
+​
+​
+    <!-- Upload your own image example code -->
+    <!-- <input type='file' />
+    <br><img id="myImg" src="#" alt="your image" height=200 width=100> -->
+</div>
+​
+</div>
+        <!--  -->
+​
+        
+        
+        <footer>
+​
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -56,7 +116,7 @@
                                     <label for="inputname">Name</label>
                                     <input class="form-control" id="inputname" placeholder="Your Name">
                                 </div>
-
+​
                                 <div class="form-group">
                                     <label for="inputage">Age</label>
                                     <input class="form-control" id="inputage" placeholder="Yo, let's be honest here!">
@@ -69,7 +129,9 @@
                                     <label for="userpic">Picture</label>
                                     <input class="form-control" id="userpic" placeholder="Insert URL of photo here">
                                 </div>
-                            </form>
+                            </form> 
+                            <!-- ... -->
+​
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -78,100 +140,69 @@
                     </div>
                 </div>
             </div>
-        <!-- End Modal -->
-
-        </nav>
-        <!-- End Navbar -->
-        <!-- Start Row One -->
-        <div class="container">
-
-            <div class="row justify-content-md-center">
-                <div class="card" id="videos">
-                    <div class="col-md-12" style="text-align: center">
-                        <div>
-                            <button onClick="togglePlay()">Mood Music</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- End Row One -->
-        <!-- Start Row 2 -->
-        <div class="container">
-            <div class="row">
-                <!-- Empty Section One -->
-                <div class="col-md-4">
-                </div>
-
-                <!-- Section Two (Main Section) -->
-                    <div class="col-md-4">
-                        <div class="card" id="cardProfile" style="width: 70%">
-                            <img src="images/tomselleck1.jpg" class="card-img-top" id="profilePic" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" id="nameAge" style="text-align: center">Tom Selleck, 34</h5>
-                                <p class="card-text" id="profileBio">I love long walks on the beach...</p>
-                                <div style="text-align: center">
-                                    <button class="btn btn-primary" id="like" >Like</button>
-                                    <button class="btn btn-primary" id="next">Next 'Stache Please</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                
-                <!-- Empty Section Three -->
-                <div class="col-md-4">
-                </div>
-
-            </div>
-
-        </div>
+​
+​
+        </footer>
+​
+​
+​
+​
     </div>
     <!-- End Row 2 -->
-
-
+​
+​
     <!-- Video Elements -->
-    <video autoplay muted loop id="myVideoBtn">
-        <source src="images/slowsmoke.mp4" type="video/mp4">
-    </video>
-
+        <video autoplay muted loop id="myVideoBtn">
+            <source src="images/slowsmoke.mp4" type="video/mp4" >
+        </video>
     <!-- Audio Elements -->
     <audio id="audioID">
         <!-- <source src="http://iss240.net/tempfiles/menu-click/1.ogg" type="audio/ogg"> -->
         <source src="audio/fire1.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
+​
+    <audio id="punch">
+        <!-- <source src="http://iss240.net/tempfiles/menu-click/1.ogg" type="audio/ogg"> -->
+        <source src="audio/punch.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+​
     <audio id="moodmusic">
         <!-- <source src="http://iss240.net/tempfiles/menu-click/1.ogg" type="audio/ogg"> -->
         <source src="audio/moodmusic.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-
-
+​
+​
     <audio id="moodmusic1" src="audio/moodmusic.mp3" preload="auto">
     </audio>
-
-    <!-- Javascript for Audio and Video -->
-    <!-- -------------------------------------------------------------------------------------- -->
-
+​
+<!-- -------------------------------------------------------------------------------------- -->
+​
+​
+​
+​
     <script>
         var audio1 = document.getElementById("audioID");
         function playAudio() {
             audio1.play();
         }
-
+        var audiopunch = document.getElementById("punch");
+        function playPunch() {
+            audiopunch.play();
+        }
         var audiopunch = document.getElementById("moodmusic");
         function playMoodMusic() {
             moodmusic.play();
         }
-    // ----------------------------------------------------------------
-    // Mood Music Feature
+        // ----------------------------------------------------------------
+        // Mood Music Feature
         var myAudio = document.getElementById("moodmusic1");
         var myVideo = document.getElementById("myVideoBtn");
         var myContainer = document.getElementsByClassName("main-container-custom");
         var isPlaying = false;
-
+​
         function togglePlay() {
             if (isPlaying && myVideo.play()) {
                 myAudio.pause();
@@ -189,15 +220,16 @@
         myAudio.onpause = function () {
             isPlaying = false;
         };
-        myVideo.onplaying = function () {
+​
+        myVideo.onplaying = function(){
             isPlaying = true;
         }
         myVideo.onpause = function () {
             isPlaying = false;
         };
-
+​
         // -----------------------------------------------------------------
-
+​
         // window.addEventListener('load', function () {
         //     document.querySelector('input[type="file"]').addEventListener('change', function () {
         //         if (this.files && this.files[0]) {
@@ -207,12 +239,19 @@
         //         }
         //     });
         // });
-
+​
         // function imageIsLoaded(e) { alert(e); }
-
+​
 // ---------------------------------------------------------------------------------
-
+​
+​
+​
+​
+​
+​
+​
+​
     </script>
 </body>
-
+​
 </html>
