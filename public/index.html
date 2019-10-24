@@ -76,8 +76,11 @@
                                     <input class="form-control" id="userpic" placeholder="Insert URL of photo here" name="pictureURL">
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button id="submit-bio" type="submit" class="btn btn-primary">Save changes</button>
+
+                                    <button type="button" class="btn btn-dark" data-dismiss="modal" class="btn-modal">Close</button>
+                                    <button id="submit-bio" type="submit" class="btn btn-dark" class="btn-modal">
+                                    <a href="index.html">Save Changes</a>
+                                        </button>
                                 </div>
                             </form>
                         </div>
@@ -91,16 +94,12 @@
         </nav>
         <!-- End Navbar -->
         <!-- Start Row One -->
-        <div class="container">
-
+        <div  id="redBtnContainer">
             <div class="row justify-content-md-center">
-                <div class="card" id="videos">
-                    <div class="col-md-12" style="text-align: center">
-                            <!-- <id="play-video" class="video-play-button" onClick="playMoodMusic()"href="#"></id> -->
-                            <button onClick="togglePlay()">Mood Music</button>
-                        
-                    </div>
-
+                <div class="col-md-12">
+                        <a id="play-video" class="video-play-button" href="#" onClick="togglePlay()">
+                            <span></span>
+                        </a>                                                
                 </div>
             </div>
         </div>
@@ -115,18 +114,26 @@
                 <!-- Section Two (Main Section) -->
                     <div class="col-md-4">
                         <div class="card" id="cardProfile" style="width: 70%">
+                            <div style="position: relative">
                             <img src="images/tomselleck1.jpg" class="card-img-top" id="profilePic" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title" id="nameAge" style="text-align: center">Tom Selleck, 34</h5>
-                                <p class="card-text" id="profileBio">Hello ladies for starters, I love long walks on the beach...</p>
-                                <div style="text-align: center">
-                                    <button class="btn btn-primary" id="like" >Like</button>
-                                    <button class="btn btn-primary" id="next">Next 'Stache Please</button>
-                                </div>
+                    
+                            <div class="bttns" style="transition-delay: 2000ms">
+                                <button class="dissBtn" type="button" id="next" onClick="playAudio2()">Dislike</button>
+                                <button class="likeBtn" type="button" id="like" onClick="playAudio()">Like</button>
                             </div>
                         </div>
+                        <div class="card-body">
+                            <h5 class="card-title" id="nameAge" style="text-align: center">Tom Selleck, 34</h5>
+                            <div data-spy="scroll" data-target="#profileBio">
+                            <p class="card-text" id="profileBio" >Hello ladies for starters, I love long walks on the beach...</p>
+                            </div>
+                        </div>
+                            <!-- <div style="text-align: center">
+                                <button class="btn btn-primary" id="like">Like</button>
+                                <button class="btn btn-primary" id="next">Next 'Stache Please</button>
+                            </div> -->
+                        </div>
                     </div>
-                
                 <!-- Empty Section Three -->
                 <div class="col-md-4">
                 </div>
@@ -150,6 +157,12 @@
         Your browser does not support the audio element.
     </audio>
 
+    <audio id="audioID2">
+            <!-- <source src="http://iss240.net/tempfiles/menu-click/1.ogg" type="audio/ogg"> -->
+            <source src="audio/buzzer.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+    </audio>
+
     <audio id="moodmusic">
         <!-- <source src="http://iss240.net/tempfiles/menu-click/1.ogg" type="audio/ogg"> -->
         <source src="audio/moodmusic.mp3" type="audio/mpeg">
@@ -167,6 +180,10 @@
         var audio1 = document.getElementById("audioID");
         function playAudio() {
             audio1.play();
+        }
+        var audio2 = document.getElementById("audioID2");
+        function playAudio2() {
+            audio2.play();
         }
 
         var audiopunch = document.getElementById("moodmusic");
@@ -204,6 +221,27 @@
             isPlaying = false;
         };
 
+
+// Red Mood Music Button ----------------------------------------------------------------
+
+        $('#play-video').on('click', function(e){
+  e.preventDefault();
+  $('#video-overlay').addClass('open');
+  $("#video-overlay").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/ngElkyQ6Rhs" frameborder="0" allowfullscreen></iframe>');
+});
+
+$('.video-overlay, .video-overlay-close').on('click', function(e){
+  e.preventDefault();
+  close_video();
+});
+
+$(document).keyup(function(e){
+  if(e.keyCode === 27) { close_video(); }
+});
+
+function close_video() {
+  $('.video-overlay.open').removeClass('open').find('iframe').remove();
+};
         // -----------------------------------------------------------------
 
         // window.addEventListener('load', function () {
