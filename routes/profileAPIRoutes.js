@@ -1,16 +1,16 @@
 /* eslint-disable camelcase */
 var db = require("../models");
-
+console.log(db);
 module.exports = function(app) {
   // Get all profile
   app.get("/api/profile", function(req, res) {
-    db.user_db.findAll({}).then(function(user_db) {
+    db.Profile.findAll({}).then(function(user_db) {
       res.json(user_db);
     });
   });
   //see one user
   app.get("/api/profile/:id", function(req, res) {
-    db.user_db
+    db.Profile
       .findOne({
         where: {
           id: req.params.id
@@ -23,7 +23,8 @@ module.exports = function(app) {
 
   // Create a new user
   app.post("/api/profile", function(req, res) {
-    db.user_db
+    console.log(req.body);
+    db.Profile
       .create({
         name: req.body.name,
         age: req.body.age,
@@ -37,7 +38,7 @@ module.exports = function(app) {
 
   // Delete a user by id
   app.delete("/api/profile/:id", function(req, res) {
-    db.user_db
+    db.Profile
       .destroy({
         where: {
           id: req.params.id
@@ -49,7 +50,7 @@ module.exports = function(app) {
   });
   //update user info
   app.put("/api/profile", function(req, res) {
-    db.user_db
+    db.Profile
       .update(req.body, {
         where: {
           id: req.body.id

@@ -1,0 +1,357 @@
+.main-container-custom {
+    /* background-color: black; */
+  }
+  body {
+    background-color: black;
+  }
+  div.container {
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px;
+    width: 100%;
+    border-width: 5px 5px;
+    display: contents;
+  }
+  .home-card {
+    margin: 5px 5px;
+    width: 25%;
+    padding: 5px 5px;
+   
+  }
+  #bio{
+    
+  }
+  div.row {
+    margin: 5px 5px;
+  }
+  .list-group-item {
+    line-height: 2.5;
+  }
+  div.col-md-3 {
+    padding:5px 5px;
+    
+  }
+  .card {
+    margin-top: 50px;
+  }
+  .card-img-top {
+  }
+  /* element.style {
+    color: red;
+    bottom: 20px;
+    font-size: 50px;
+  } */
+  .nav-logo {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+  }
+  .navbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    background-color: #262626;
+  }
+  .navbar-brand {
+    color: #998061 !important;
+  }
+  .btn {
+    border-color: #998061 !important;
+  }
+  .btn-outline-primary {
+    color: #998061 !important;
+  }
+  .btn-primary {
+    background-color: #262626 !important;
+    color: #998061 !important;
+  }
+  .btn:hover
+  {
+  background-image:none;
+  background-color: goldenrod !important;
+  color: white !important;
+  border-color: black !important;
+  }
+  .main-container-custom {
+    background-image: url("https://images7.alphacoders.com/546/thumb-1920-546096.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .video-play-button {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-sizing: content-box;
+    display: block;
+    width: 32px;
+    height: 44px;
+    /* background: #fa183d; */
+    border-radius: 50%;
+    padding: 18px 20px 18px 28px;
+  }
+  .video-play-button:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: #ba1f24;
+    border-radius: 50%;
+    animation: pulse-border 1500ms ease-out infinite;
+  }
+  .video-play-button:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: #fa183d;
+    border-radius: 50%;
+    transition: all 200ms;
+  }
+  .video-play-button:hover:after {
+    background-color: darken(#fa183d, 10%);
+  }
+  .video-play-button img {
+    position: relative;
+    z-index: 3;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+  .video-play-button span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    border-left: 32px solid #fff;
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+  }
+  @keyframes pulse-border {
+    0% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+      opacity: 0;
+    }
+  }
+  .video-overlay {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.80);
+    opacity: 0;
+    transition: all ease 500ms;
+  }
+  .video-overlay.open {
+    position: fixed;
+    z-index: 1000;
+    opacity: 1;
+  }
+  .video-overlay-close {
+    position: absolute;
+    z-index: 1000;
+    top: 15px;
+    right: 20px;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 200ms;
+  }
+  .video-overlay-close:hover {
+    color: #fa183d;
+  }
+  .video-overlay iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* width: 90%; */
+    /* height: auto; */
+    box-shadow: 0 0 15px rgba(0,0,0,0.75);
+  }
+  /* -------------------------------------------------------- */
+  @import 'https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css';
+  @import url('https://fonts.googleapis.com/css?family=Montserrat');
+  body {
+    display: flex;
+    justify-content: flex-start;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+  }
+  button:focus {outline:0;}
+  .header {
+    height: 80px;
+    background:  url('http://www.ryangwilson.com/bitovi/evil-tinder/evil-tinder-logo.svg') no-repeat center;
+    background-size: auto 55%;
+    border-bottom: 1px dotted lightgray;
+  }
+  /* EVIL TINDER COMPONENT */
+  evil-tinder {
+    display: flex;
+    position: relative; 
+    flex: 1 0 auto;
+    justify-content: center;
+  }
+  evil-tinder img {
+    width: 96vw;
+    margin: 2vw;
+    max-height: 65vh;
+    object-fit: cover;
+    object-position: 50% 0%;
+    border-radius: 10px;
+  }
+  .current, .next {
+    position: absolute;
+    top: 0px;
+    z-index: 100;
+    width: 100%;
+  }
+  .next {
+    z-index: 99;
+    margin-top: 15px;
+  }
+  .next img {
+    width: 94vw;
+    margin: 1vw 3vw;
+  }
+  .result {
+  }
+  .liking:after {
+    font-size: 25vw;
+    content: "Like";
+    padding: 10px 26px;
+    color: #73c998;
+    border: #73c998 2vw solid;
+    margin-top: 100px;
+    z-index: 9999;
+    display: inline-flex;
+    position: relative;
+    border-radius: 30px;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
+    opacity: 1;
+    transform: scale(1) rotate(-7deg);
+    animation: resultAnim .8s ease-in-out;
+  }
+  .noping:after {
+    font-size: 25vw;
+    content: "Nope";
+    padding: 6px 26px 16px;
+    color: #ed7571;
+    border: #ed7571 2vw solid;
+    margin-top: 100px;
+    z-index: 9999;
+    display: inline-flex;
+    position: relative;
+    border-radius: 30px;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    opacity: 1;
+    transform: scale(1) rotate(-7deg);
+    animation: resultAnim .8s ease-in-out;
+  }
+  @keyframes resultAnim {
+    0% {
+      transform: scale(3) rotate(0deg);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1) rotate(-7deg);
+      opacity: 1;
+    }
+  }
+  /* FOOTER */
+  .footer {
+    flex-shrink: 0;
+    margin: 25px 0 30px;
+    padding: 30px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 100px;
+    width: 100%;
+    z-index: 9999;
+    position: absolute;
+    right: 85px;
+    bottom: 25px;
+    font-size: 85px !important;
+  }
+  .likeBtn {
+    border-radius: 50%;
+    height: 115px;
+    width: 115px;
+    border: none;
+    padding: 20px;
+    margin: 0 10px;
+    background:  url('https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/green_webpict35_1484337168-1.png') no-repeat center;
+    background-size: auto 55px;
+    color : transparent;
+      font-size : 0;
+  }
+  .dissBtn {
+    border-radius: 50%;
+    height: 115px;
+    width: 115px;
+    border: none;
+    padding: 50px;
+    margin: 0 10px;
+    background:  url('../images/157185587599484676.png') no-repeat center;
+    background-size: auto 50px;
+    color : transparent;
+      font-size : 0;
+  }
+  @media screen 
+    and (min-width: 320px) 
+    and (max-width: 890px) {
+      .undoBtn, .superBtn {
+        height: 40px;
+        width: 40px;
+        padding: 25px;
+        margin: 0 3px;
+        background-size: auto 25px;
+      }
+      .likeBtn, .dissBtn {
+        height: 90px;
+        width: 90px;
+        padding: 25px;
+        margin: 0 6px;
+        background-size: auto 50px;
+      } 
+  }
+  .bttns {
+    position: absolute;
+    bottom: 23px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
