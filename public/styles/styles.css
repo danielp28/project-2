@@ -6,6 +6,21 @@ body {
   background-color: black;
 }
 
+/* Navbar Color Override */
+nav.navbar.navbar-dark.bg-dark {
+  background-color: #121418!important;
+}
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
+  font-size: 1.5rem !important;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
 div.container {
   margin: 5px 5px 5px 5px;
   padding: 5px 5px;
@@ -18,6 +33,8 @@ div.container {
   margin: 5px 5px;
   width: 25%;
   padding: 5px 5px;
+  
+
  
 }
 #bio{
@@ -50,6 +67,34 @@ div.col-md-3 {
 
 #cardProfile {
 margin: auto;
+
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  /* padding: 1.25rem; */
+  background-color: #b9b5b5;
+  /* height: 120px;
+  padding: 5px 5px; */
+}
+
+/* .card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+} */
+
+#profileBio {
+  /* padding: 5px 5px;
+  margin: 5px 5px; */
+  
 }
 
 #favoritesTable {
@@ -62,9 +107,191 @@ margin: auto;
 }
 
 .nav-logo {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   margin-right: 10px;
+}
+
+/* Red Mood-Music Button */
+.row.justify-content-md-center{
+ height: 115px;
+}
+
+#videos.card {
+  background-color: black;
+  height: 100px;
+
+}
+
+
+.video-play-button {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-sizing: content-box;
+  display: block;
+  width: 32px;
+  height: 44px;
+  /* background: #fa183d; */
+  border-radius: 50%;
+  padding: 18px 20px 18px 28px;
+}
+
+.video-play-button:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #ba1f24;
+  border-radius: 50%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+
+.video-play-button:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: #fa183d;
+  border-radius: 50%;
+  transition: all 200ms;
+}
+
+.video-play-button:hover:after {
+  background-color: darken(#fa183d, 10%);
+}
+
+.video-play-button img {
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.video-play-button span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-left: 32px solid #fff;
+	border-top: 22px solid transparent;
+	border-bottom: 22px solid transparent;
+}
+
+@keyframes pulse-border {
+  0% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
+.video-overlay {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.80);
+  opacity: 0;
+  transition: all ease 500ms;
+}
+
+.video-overlay.open {
+  position: fixed;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.video-overlay-close {
+  position: absolute;
+  z-index: 1000;
+  top: 15px;
+  right: 20px;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.video-overlay-close:hover {
+  color: #fa183d;
+}
+
+.video-overlay iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  /* width: 90%; */
+  /* height: auto; */
+  box-shadow: 0 0 15px rgba(0,0,0,0.75);
+}
+
+/* Button Styles */
+
+.btn-outline-primary {
+  color: #998061 !important;
+}
+
+.btn {
+  border-color: #998061 !important;
+}
+
+.btn-dark {
+  color: #d6d6d6 !important;
+  background-color: #343a40;
+  /* border-color: #343a40; */
+}
+
+.btn:hover
+{
+background-image:none;
+background-color: goldenrod !important;
+color: white !important;
+border-color: black !important;
+}
+
+a {
+  color: #ddded6 !important;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+#leaderboard {
+  text-align: center;
+  color: white;
+}
+
+.modal-body {
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1rem;
+  background-color: #d4d0d0;
 }
 /* -------------------------------------------------------- */
 
@@ -117,7 +344,7 @@ border-color: black !important;
   background-repeat: no-repeat;
   background-size: cover;
 } */
-.video-play-button {
+/* .video-play-button {
   position: absolute;
   z-index: 10;
   top: 50%;
@@ -127,7 +354,7 @@ border-color: black !important;
   display: block;
   width: 32px;
   height: 44px;
-  /* background: #fa183d; */
+  background: #fa183d;
   border-radius: 50%;
   padding: 18px 20px 18px 28px;
 }
@@ -226,10 +453,10 @@ border-color: black !important;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  /* width: 90%; */
-  /* height: auto; */
+  width: 90%; 
+  height: auto;
   box-shadow: 0 0 15px rgba(0,0,0,0.75);
-}
+} */
 /* -------------------------------------------------------- */
 @import 'https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css';
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -343,12 +570,12 @@ evil-tinder img {
   height: 115px;
   width: 115px;
   border: none;
-  padding: 20px;
-  margin: 0 10px;
-  background:  url('https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/green_webpict35_1484337168-1.png') no-repeat center;
+  padding: 30px;
+  margin: -95px 14px;
+  background: url(https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/green_webpict35_1484337168-1.png) no-repeat center;
   background-size: auto 55px;
-  color : transparent;
-    font-size : 0;
+  color: transparent;
+  font-size: 0;
 }
 .dissBtn {
   border-radius: 50%;
@@ -356,11 +583,11 @@ evil-tinder img {
   width: 115px;
   border: none;
   padding: 50px;
-  margin: 0 10px;
-  background:  url('../images/157185587599484676.png') no-repeat center;
-  background-size: auto 50px;
-  color : transparent;
-    font-size : 0;
+  margin: -95px 10px;
+  background: url(../images/157185587599484676.png) no-repeat center;
+  /* background-size: auto 50px; */
+  color: transparent;
+  font-size: 0;
 }
 @media screen 
   and (min-width: 320px) 
@@ -381,11 +608,12 @@ evil-tinder img {
     } 
 }
 .bttns {
-  position: absolute;
-  bottom: 23px;
+  /* position: absolute; */
+  /* bottom: 23px; */
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 0 10px;
   box-sizing: border-box;
+  /* height: 25px; */
 }

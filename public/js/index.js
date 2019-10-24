@@ -188,7 +188,7 @@ function nextPhoto(profiles) {
     {
       name: "Idris Elba",
       age: 32,
-      bio: "I'm a mysterious man",
+      bio: "I live across the pond, let's meet up soon!",
       pictureURL: "images/idriselba.jpg"
     },
     {
@@ -199,23 +199,23 @@ function nextPhoto(profiles) {
     },
     {
       name: "Milo Ventimiglia",
-      age: 28,
-      bio: "Itsa me, Baggio!",
+      age: 30,
+      bio: "That blasted Crock-Pot!",
       pictureURL: "images/miloventimiglia.jpg"
     },{
       name: "Eddie Murphy",
-      age: 28,
-      bio: "Itsa me, Baggio!",
+      age: 40,
+      bio: "I see what you're looking at, you like the stache don't you?",
       pictureURL: "images/eddiemurphy.jpg"
     },{
       name: "Henry Cavill",
-      age: 28,
-      bio: "Itsa me, Baggio!",
+      age: 35,
+      bio: "Superman...with a stache?",
       pictureURL: "images/henrycavill.jpg"
     },{
       name: "Bradley Cooper",
-      age: 28,
-      bio: "Itsa me, Baggio!",
+      age: 36,
+      bio: "Mmmmm, cheeeeese!",
       pictureURL: "images/bradleycooper.jpg"
     },
   ];

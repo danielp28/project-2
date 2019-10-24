@@ -26,37 +26,54 @@
 
 <body>
     <div class="main-container-custom">
+        
         <!-- Start Navbar -->
         <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" style="color: white">'Stachr</a>
-            
+                <!-- <a class="navbar-brand" style="color: white">'Stachr</a> -->
+                <div>
+                    <a class="navbar-brand" href="">
+                        <img src="images/stash.png" class="d-inline-block align-top nav-logo" alt="Stachr Logo">Stachr
+                    </a>
+                </div>
+                <div>
+                <button type="button" class="btn btn-outline-primary"><a href="index.html">Home Page</a></button>
+        
 
-            <button type="button" class="btn btn-outline-primary"><a href="index.html">Home Page</a></button>
+                </div>
+        
+        
+        
         </nav>
-        <!-- End Navbar -->
-        <!-- Start Row One -->
-        <div class="container">
-
+    
+     <!-- Start Row One -->
+     <div id="redBtnContainer">
             <div class="row justify-content-md-center">
-                <div class="card" id="videos">
-                    <div class="col-md-12" style="text-align: center">
-                        <div>
-                            <button onClick="togglePlay()">Mood Music</button>
-                        </div>
-                    </div>
-
+                <div class="col-md-12">
+                        <a id="play-video" class="video-play-button" href="#" onClick="togglePlay()">
+                            <span></span>
+                        </a>                                                
                 </div>
             </div>
         </div>
         <!-- End Row One -->
-        <!-- Start Row 2 -->
+        <!-- Start Row Two -->
+     <div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-12" id="leaderboard">
+                      <h4>Mustache Madness - Leaderboard</h4>                                           
+                </div>
+            </div>
+        </div>
+        <!-- End Row Two -->
+
+        <!-- Start Row Three -->
         <div class="container">
             <div class="row" id="favRow1">
                 <!-- Empty Section One -->
                 <div class="col-md-3">
                 </div>
 
-                <!-- Section Two (Main Section) -->
+                <!-- Section Three (Main Section) -->
               
                     <div class="col-md-6">
                         <table class="table" id="favoritesTable">
@@ -98,7 +115,7 @@
 
         </div>
     </div>
-    <!-- End Row 2 -->
+    <!-- End Row Three-->
 
 
     <!-- Video Elements -->
